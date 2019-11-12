@@ -1,0 +1,90 @@
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12">
+      <h3>Attribute Directive</h3>
+
+      <p class="text-justify">
+        Attribute Directive là những chỉ thị làm thay đổi style của thẻ html. Đối với các structural directive
+        (ngoại trừ ngSwitch) thì sẽ dùng kí tự * trước directive. Còn attribute directive thì sẽ dùng [] lồng ra
+        ngoài directive.
+      </p>
+
+      <hr>
+    </div>
+
+    <div class="col-12">
+      <h4>ngClass</h4>
+
+      <p>ngClass dùng để thêm class vào thẻ html nếu thỏa mãn điều kiện.</p>
+    </div>
+
+    <div class="col-12">
+      <h5>Ví dụ:</h5>
+    </div>
+
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">Vui lòng nhập tên của bạn:</label>
+        <input type="text" class="form-control" [(ngModel)]="fullName">
+
+        <div class="alert my-3" role="alert"
+             [ngClass]="{'alert-success':fullName.length>=5, 'alert-danger':fullName.length < 5}">
+          <strong *ngIf="fullName.length < 5">Phải có ít nhất 5 kí tự!!!</strong>
+          <strong *ngIf="fullName.length >= 5">OK!!!</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12">
+      <p>Trong thẻ html, sử dụng [ngClass]="'class-name1':condition1"</p>
+
+      <img src="assets/images/bai12-ngClass-1.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">Lưu ý:
+      <br> - Condition có thể là biến điều kiện được tạo sẵn trong ts hoặc là biểu thức điều kiện.
+      <br> - Có thể sử dụng nhiều cặp class-condition
+      <br> - Nếu có nhiều cặp class-condition thì phải đặt trong cặp ngoặc móc.
+    </div>
+
+    <div class="col-12">
+      <hr>
+
+      <h4>ngStyle</h4>
+
+      <p>ngStyle dùng để áp dụng những style cho thẻ html theo giá trị được khai báo trong file ts.</p>
+    </div>
+
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">Vui lòng nhập tên của bạn:</label>
+        <input type="text" class="form-control" [(ngModel)]="fullName2" (keyup)="changeValue($event)">
+
+        <div class="alert my-3" role="alert" [ngStyle]="{'background-color':bgNgStyle}">
+          <strong *ngIf="fullName2.length < 5">Phải có ít nhất 5 kí tự!!!</strong>
+          <strong *ngIf="fullName2.length >= 5">OK!!!</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12">
+      - Bước 1: Trong file ts, khai báo biến chứa giá trị cho style.
+
+      <img src="assets/images/bai12-ngStyle-1.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      - Bước 2: Trong thẻ html sử dụng [ngStyle].
+
+      <img src="assets/images/bai12-ngStyle-2.png" class="img-fluid rounded">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-12">
+            <h3>Binding class</h3>
+
+            <p>Binding class sử dụng để áp dụng class cho thẻ html theo điều kiện</p>
+        </div>
+
+        <div class="col-12">
+            <h5>Ví dụ:</h5>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="alert" role="alert" [class.alert-success]="isOK">
+                        <strong>Điều kiện đúng</strong>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="alert" role="alert" [class.alert-dark]="!isOK">
+                        <strong>Điều kiện sai</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <h5>Cách sử dụng:</h5>
+        </div>
+
+        <div class="col-12">
+            <p>- Bước 1: Khai báo biến điều kiện trong file ts.</p>
+
+            <img src="assets/images/bai8_binding_class_1.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2 text-justify">
+            <p>- Bước 2: Sử dụng [class.class-name]="var-name". Lưu ý: tại đây có thể sử dụng phủ định !var-name</p>
+
+            <img src="assets/images/bai8_binding_class_2.png" class="img-fluid rounded">
+        </div>
+    </div>
+</div>

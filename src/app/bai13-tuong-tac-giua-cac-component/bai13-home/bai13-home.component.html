@@ -1,0 +1,140 @@
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12">
+      <h3>@Input</h3>
+
+      <p>@Input dùng để chuyền giá trị từ component cha vào component con.</p>
+    </div>
+
+    <div class="col-12">
+      <h5>Ví dụ:</h5>
+
+      <h6>Component con:</h6>
+
+      <app-bai13-child [date]="'10/11/2019'"></app-bai13-child>
+    </div>
+
+    <div class="col-12">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+
+    <div class="col-12 text-justify">
+      <p>- Bước 1: Trong directive của component con tại component cha, sử dụng [key] = "value"</p>
+
+      <img src="assets/images/bai13-2.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 2: Trong component-child.ts:
+        <br>+ Import Input.
+        <br>+ Khai báo @Input('key') varName:DataType;</p>
+
+      <img src="assets/images/bai13-1.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2 text-justify">
+      <p>Lưu ý:
+        <br> - Nếu không muốn khai báo key, ta có thể sử dụng key mặc định là varName khi khai báo @Input tại component-child.ts.
+        <br> - Nếu value là chuỗi thì phải lồng vào trong cặp nháy đơn [varNameInput] = "'value'".
+        <br> - Nếu value là 1 biến thì phải sử dụng [varNameInput] = (var-name);
+      </p>
+    </div>
+
+
+    <div class="col-12">
+      <hr>
+
+      <h3>@Output</h3>
+
+      <p>@Output dùng để gửi dữ liệu từ component con sang component cha.</p>
+    </div>
+
+    <div class="col-12">
+      <h5>Ví dụ</h5>
+
+      <h6>Component cha:</h6>
+      <p>Dữ liệu nhận được từ component con: <b class="text-danger">{{dataFromChild}}</b></p>
+
+      <h6>Component con:</h6>
+      <app-bai13-child2 (data)="getData($event)"></app-bai13-child2>
+    </div>
+
+    <div class="col-12 mt-2">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 1: Tại component-child.ts, import Output và EventEmitter from @angular/core.</p>
+
+      <img src="assets/images/bai13-3.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 2: Tại component-child.ts
+        <br>+ Khai báo @Output('key') sender = new EventEmitter<"datatype return">();
+        <br>+ Sử dụng this.sender.emit(data) để gửi dữ liệu là data sang component cha.
+      </p>
+
+      <img src="assets/images/bai13-4.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2 text-justify">
+      <p>- Bước 3: Trong parent-component.html, tại directive component con, sử dụng (key)="method($event)"
+        <br>+ method sự kiện của component cha nơi nhận dữ liệu gửi tới từ component con.
+        <br>+ $event đại diện cho dữ liệu được gửi sang từ component cha.</p>
+
+      <img src="assets/images/bai13-5.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 4: Trong parent-component.ts, lấy ra event trong method được sử dụng ở trên.</p>
+
+      <img src="assets/images/bai13-6.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12">
+      <hr>
+
+      <h3>@ViewChild</h3>
+
+      <p>@ViewChild dùng để gọi đến 1 phương thức của component con, thông qua phương thức đó, ta có thể thực hiện hành động trong component con hoặc lấy được giá
+        trị của các biến của component con.</p>
+    </div>
+
+    <div class="col-12">
+      <h5>Ví dụ:</h5>
+
+      <div class="btn btn-primary" (click)="callMethodChild3()">Call method at component child3</div>
+
+      <app-bai13-child3></app-bai13-child3>
+    </div>
+
+    <div class="col-12 mt-2">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 1: Trong component-child.ts, tạo phương thức để component cha gọi. Phương thức này có thể thực hiện hành
+        động hoặc trả về giá trị.</p>
+
+      <img src="assets/images/bai13-7.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 2: Trong parent-component.html, viết directive của component con.</p>
+
+      <img src="assets/images/bai13-8.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 3: Trong parent-component.ts:
+        <br>+ Import component con.
+        <br>+ Khai báo @ViewChild(ChildComponent) private child-var: ChildComponent.
+        <br>+ Gọi đến phương thức của component con thông qua this.child-var.
+      </p>
+
+      <img src="assets/images/bai13-9.png" class="img-fluid rounded">
+    </div>
+  </div>
+</div>

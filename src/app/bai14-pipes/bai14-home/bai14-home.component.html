@@ -1,0 +1,35 @@
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-12">
+            <h3>Pipes</h3>
+
+            <p>Pipes dùng để format lại dữ liệu, giống như Filter trong AngularJS</p>
+        </div>
+
+        <div class="col-12">
+            <h5>Ví dụ:</h5>
+
+            <p>Thời gian hiện tại lại: {{currentDate | date : 'dd/MM/yyyy hh:mm:ss'}}</p>
+        </div>
+
+        <div class="col-12">
+            <h5>Cách sử dụng:</h5>
+        </div>
+
+        <div class="col-12 mt-2">
+            <p>- Bước 1: Tạo biến dữ liệu trong file ts.</p>
+
+            <img src="assets/images/bai14.1.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2">
+            <p>- Bước 2: Trong thẻ html sử dụng <span>{{varName | pipe</span> }}. Có thể sử dụng nhiều pipe, các pipe cách nhau bởi ký tự "|".</p>
+
+            <img src="assets/images/bai14.2.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 my-4">
+            <p>Có thể tham khảo các pipes hiện có tại: <a href="https://angular.io/api?type=pipe" target="blank">Pipes Angular</a></p>
+        </div>
+    </div>
+</div>

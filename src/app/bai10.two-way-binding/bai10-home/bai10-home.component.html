@@ -1,0 +1,50 @@
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12">
+      <h3>Two way binding</h3>
+
+      <p>Two way binding là cơ chế buộc dữ liệu 2 chiều. Khi dữ liệu ở View thay đổi thì dữ liệu ở Model cũng thay
+        đổi theo và ngược lại.</p>
+    </div>
+
+    <div class="col-12">
+      <h5>Ví dụ:</h5>
+    </div>
+
+    <div class="col-6">
+      <div class="form-group">
+        <label>Vui lòng nhập vào ô text bên dưới:</label>
+        <input type="text" class="form-control" [(ngModel)]="data">
+        <small class="form-text">Dữ liệu bạn đã nhập:
+          <i class="font-weight-bold">{{data}}</i></small>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12 mb-4">
+      <p>- Bước 1: Trong app.module.ts khai báo FormsModule</p>
+
+      <img src="assets/images/bai10-two-way-binding-1.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mb-4">
+      <p>- Bước 2: Nếu muốn dùng dữ liệu trong code logic, khai báo biến var-name chứa dữ liệu trong file ts.</p>
+
+      <img src="assets/images/bai10-two-way-binding-2.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mb-4">
+      <p>- Bước 3: Trong thẻ nhập dữ liệu vào, sử dụng [(ngModel)]="var-name".</p>
+
+      <img src="assets/images/bai10-two-way-binding-3.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mb-4">
+      <p>- Bước 4: Sử dụng interpolation để hiển thị dữ liệu.</p>
+      <img src="assets/images/bai10-two-way-binding-3.png" class="img-fluid rounded">
+    </div>
+  </div>
+</div>

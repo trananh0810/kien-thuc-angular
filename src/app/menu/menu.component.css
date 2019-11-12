@@ -1,0 +1,22 @@
+ul>a>li{
+    list-style: none;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid rgb(124, 124, 124);
+    padding-left: 10px!important;
+    font-size: 13px;
+}
+
+ul>a>li:hover{
+    background-color: #555f69!important;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.menuActive li{
+    background-color: #555f69!important;
+}

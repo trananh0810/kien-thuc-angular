@@ -1,0 +1,50 @@
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12">
+      <h3>Routing</h3>
+
+      <p>Routing dùng để định tuyến cho trang web, giúp chuyển trang mà không cần phải load lại trang web.</p>
+    </div>
+
+    <div class="col-12">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12">
+      <p>- Bước 1: Trong index.html, khai báo < base href="/"> trong cặp thẻ head để trang web nhận biết path gốc.
+      </p>
+
+      <img src="assets/images/bai21.1.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 2: Tạo file router:
+        <br>+ Import Routes và RouterModule.
+        <br>+ Khai báo routes có kiểu Routes là 1 mảng các path+component.
+        <br>+ export appRouter.
+
+        <img src="assets/images/bai21.2.png" class="img-fluid rounded">
+      </p>
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 3: Import appRouter ở trên vào app.module.ts</p>
+
+      <img src="assets/images/bai21.3.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 4: Tại nơi muốn định tuyến component, ta đặt thẻ < router-outlet>< /router-outlet> </p>
+      <img src="assets/images/bai21.4.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>
+        - Bước 5: Trong thẻ a, thay href bằng routerLink.
+        <br>+ Thêm routerLinkActive="classActive" khi muốn thêm class cho thẻ a được click.
+      </p>
+
+      <img src="assets/images/bai21.5.png" class="img-fluid rounded">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-12">
+            <h3>Structural Directive</h3>
+
+            <p>Structural directive là những thẻ chỉ thị làm thay đổi cấu trúc DOM ví dụ như ẩn hiện.</p>
+
+            <hr>
+        </div>
+
+
+        <div class="col-12">
+            <h4>ngIf</h4>
+
+            <p>ngIf dùng để ẩn hoặc hiện thẻ theo điều kiện.</p>
+        </div>
+
+        <div class="col-12">
+            <h5>Ví dụ:</h5>
+        </div>
+
+        <div class="col-12">
+            <div class="btn btn-success" (click)="click()">{{btnName}}</div>
+
+            <div class="alert alert-primary my-2" role="alert" *ngIf="isDisplay">
+                <strong>Lorem ipsum, dolor sit amet consectetur</strong>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <h5>Cách sử dụng:</h5>
+        </div>
+
+        <div class="col-12">
+            <p>- Bước 1: Trong file ts tạo 1 biến làm điều kiện.</p>
+
+            <img src="assets/images/bai11-ngif-1.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2 text-justify">
+            <p>- Bước 2: Trong thẻ html, sử dụng *ngIf="condition-var". (condition-var cũng có thể là 1 biểu thức điều kiện).
+              Thẻ sẽ hiện ra nếu điều kiện đúng và ẩn đi nếu điều kiện sai.</p>
+
+            <img src="assets/images/bai11-ngif-2.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12">
+            <hr>
+
+            <h4>ngSwitch</h4>
+
+            <p>ngSwitch dùng để hiển thị các thẻ con của nó theo điều kiện đã được định sẵn.</p>
+        </div>
+
+        <div class="col-12">
+            <h5>Ví dụ:</h5>
+        </div>
+
+        <div class="col-12">
+            <ul class="list-group my-3" [ngSwitch]="color">
+                <li class="list-group-item active" *ngSwitchCase="'blue'">Blue</li>
+                <li class="list-group-item bg-success" *ngSwitchCase="'green'">Green</li>
+                <li class="list-group-item bg-dark text-white" *ngSwitchCase="'black'">Black</li>
+            </ul>
+        </div>
+
+        <div class="col-12">
+            <h5>Cách sử dụng:</h5>
+        </div>
+
+        <div class="col-12">
+            <p>- Bước 1: Tạo biến điều kiện trong file ts.</p>
+
+            <img src="assets/images/bai11-ngSwitch-1.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2">
+            <p>- Bước 2: Trong thẻ cha, sử dụng [ngSwitch]='conditon-var'.</p>
+
+            <img src="assets/images/bai11-ngSwitch-2.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2">
+            <p>- Bước 3: Trong thẻ con, sử dụng *ngSwitchCase="condition-value".</p>
+
+            <img src="assets/images/bai11-ngSwitch-2.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2">
+            <p>- Lưu ý: Nếu giá trị của điều kiện là chuỗi thì trong *ngSwitchCase, giá trị phải đặt thêm trong cặp nháy đơn..</p>
+
+            <img src="assets/images/bai11-ngSwitch-3.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 my-4">
+            <hr>
+
+            <h4>ngFor</h4>
+
+            <p>ngFor được sử dụng để lặp thẻ chứa nó.</p>
+        </div>
+
+        <div class="col-12">
+            <h5>Ví dụ:</h5>
+        </div>
+
+        <div class="col-6 my-3">
+            <ul class="list-group">
+                <li class="list-group-item"
+                    *ngFor="let item of colors;index as i">{{i+1}}. {{item}}</li>
+            </ul>
+        </div>
+
+        <div class="col-12">
+            <h5>Cách sử dụng:</h5>
+        </div>
+
+        <div class="col-12">
+            <p>- Bước 1: Trong file ts, tạo biến chứa dữ liệu. Ví dụ 1 mảng.</p>
+
+            <img src="assets/images/bai11-ngFor-1.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2 text-justify">
+            <p>- Bước 2: Trong thẻ html muốn  lặp, sử dụng *ngFor="let item of arrs;index as i". Với item là đối tượng hiện tại, arrs là biến chứa mảng dữ liệu, gán chỉ số của item trong arrs vào i.</p>
+
+            <img src="assets/images/bai11-ngFor-2.png" class="img-fluid rounded">
+        </div>
+    </div>
+</div>

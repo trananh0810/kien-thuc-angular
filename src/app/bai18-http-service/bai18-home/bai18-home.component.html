@@ -1,0 +1,60 @@
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12">
+      <h3>HttpClient</h3>
+
+      <p>HttpClient dùng để gọi dữ liệu từ api.</p>
+    </div>
+
+    <div class="col-12">
+      <h5>Ví dụ:</h5>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4" *ngFor="let userItem of users">
+            <div class="card">
+              <img class="card-img-top" src="{{userItem.avatar}}" alt="">
+              <div class="card-body">
+                <h4 class="card-title">ID: {{userItem.id}}</h4>
+                <p class="card-text">{{userItem.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 mt-2">
+      <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 1: Import HttpClientModule vào app.module.ts</p>
+
+      <img src="assets/images/bai18.1.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 2: Tạo service bằng cmd 'ng g s service_name'.
+          <br>+ Import HttpClient, Observable.
+          <br>+ Trong contructor, khai báo 1 biến private http.
+          <br>+ Tạo method có kiểu dữ liệu trả về là Observable< any[] >
+          <br>+ Trong method này, sử dụng this.http.get< any[]>('path_api') để lấy dữ liệu từ api về.
+      </p>
+
+      <img src="assets/images/bai18.2.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 3: Tại nơi muốn lấy dữ liệu, import service và gọi đến method của service.</p>
+
+      <img src="assets/images/bai18.3.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>Lưu ý: Đây chỉ là hướng dẫn của phương thức get. Các phương thức khác như post, put, delete có thểm xem hướng dẫn thực hiện tương tự tại
+        <a href="https://www.positronx.io/angular-8-httpclient-http-tutorial-build-consume-restful-api/" target="blank">Http Angular</a>
+      </p>
+    </div>
+  </div>
+</div>

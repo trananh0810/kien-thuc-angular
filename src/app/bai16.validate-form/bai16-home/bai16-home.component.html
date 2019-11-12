@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h3>Validate Forms</h3>
+
+            <p>Validate form dùng để check dữ liệu nhập vào từ form.</p>
+        </div>
+
+        <div class="col-12">
+            <h5>Ví dụ:</h5>
+        </div>
+
+        <div class="col-6 offset-3">
+            <form #userForm="ngForm"(ngSubmit)="this.submit()">
+                <div class="form-group">
+                    <label>Họ và tên:</label>
+                    <input type="text" class="form-control" name="name" required #name ngModel minlength="5" maxlength="50">
+                    {{name.className}}
+                    <small class="form-text text-danger" *ngIf="name.d || name.touched">
+                        <span *ngIf="userForm.name.err">
+                            Vui lòng nhập họ và tên!
+                        </span>
+
+                        <span *ngIf="name.errors.minlength">
+                            Tên phải ít nhất 5 ký tự
+                        </span>
+                    </small>
+
+                    <label>Email:</label>
+                    <input type="email" class="form-control" name="email" required #email="ngModel" ngModel>
+                    <small id="helpId" class="form-text text-muted text-danger">
+                    </small>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
