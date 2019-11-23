@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, FormControl, FormGroup} from '@angular/forms';
+import { FormsModule, FormControl, FormGroup } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +28,16 @@ import { Bai16HomeComponent } from './bai16.validate-form/bai16-home/bai16-home.
 import { Bai18HomeComponent } from './bai18-http-service/bai18-home/bai18-home.component';
 import { appRouter } from 'src/router/app.router';
 import { Bai21HomeComponent } from './bai21-routing/bai21-home/bai21-home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GetParamComponent } from './get-param/get-param.component';
+import { Bai24HomeComponent } from './bai24-child-route/bai24-home/bai24-home.component';
+import { Bai24Tab1Component } from './bai24-child-route/bai24-tab1/bai24-tab1.component';
+import { Bai24Tab2Component } from './bai24-child-route/bai24-tab2/bai24-tab2.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { HomeGuard } from 'src/guard/home.guard';
+import { Bai25RouteGuardComponent } from './bai25-route-guard/bai25-route-guard.component';
+import { PanigationComponent } from './panigation/panigation.component';
 
 @NgModule({
   declarations: [
@@ -49,14 +61,25 @@ import { Bai21HomeComponent } from './bai21-routing/bai21-home/bai21-home.compon
     Bai15HomeComponent,
     Bai16HomeComponent,
     Bai18HomeComponent,
-    Bai21HomeComponent
+    Bai21HomeComponent,
+    NotFoundComponent,
+    GetParamComponent,
+    Bai24HomeComponent,
+    Bai24Tab1Component,
+    Bai24Tab2Component,
+    LoginComponent,
+    HomeComponent,
+    Bai25RouteGuardComponent,
+    PanigationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    appRouter
+    appRouter,
+    NgbModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

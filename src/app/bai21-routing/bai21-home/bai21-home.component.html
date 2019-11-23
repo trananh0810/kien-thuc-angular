@@ -21,6 +21,8 @@
       <p>- Bước 2: Tạo file router:
         <br>+ Import Routes và RouterModule.
         <br>+ Khai báo routes có kiểu Routes là 1 mảng các path+component.
+        <br>+ Ở cuối mảng routes, khai báo path:'**', component:NotFoundComponent để chuyển đến trang Not Found khi link
+        không tồn tại.
         <br>+ export appRouter.
 
         <img src="assets/images/bai21.2.png" class="img-fluid rounded">
@@ -34,8 +36,8 @@
     </div>
 
     <div class="col-12 mt-2">
-      <p>- Bước 4: Tại nơi muốn định tuyến component, ta đặt thẻ < router-outlet>< /router-outlet> </p>
-      <img src="assets/images/bai21.4.png" class="img-fluid rounded">
+      <p>- Bước 4: Tại nơi muốn định tuyến component, ta đặt thẻ < router-outlet>
+          < /router-outlet> </p> <img src="assets/images/bai21.4.png" class="img-fluid rounded">
     </div>
 
     <div class="col-12 mt-2">
@@ -45,6 +47,70 @@
       </p>
 
       <img src="assets/images/bai21.5.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-4">
+      <h5>Redirect trong code ts:</h5>
+
+      <div class="btn btn-primary" (click)="onRedirect()">
+        Redirect
+      </div>
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>
+        - Bước 1: Trong code ts:
+        <br>+ Import Router.
+        <br>+ Khởi tạo 1 biến private router: Router trong contructor.
+        <br>+ Tạo method, sử dụng this.router.navigate(['path_muốn_chuyển_đến]);
+      </p>
+
+      <img src="assets/images/bai21.6.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>
+        - Bước 2: Trong html, gọi đến hàm vừa khai báo ở trên.
+      </p>
+
+      <img src="assets/images/bai21.7.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-4">
+      <h5>Gửi và nhận tham số trên URL</h5>
+
+      <a routerLink="/home/bai21/1/2" class="btn btn-primary my-2">Chi tiết sản phẩm</a>
+    </div>
+
+    <div class="col-12 mt-2">
+      <p>- Bước 1: Khai báo path cho component nơi nhận param.</p>
+
+      <img src="assets/images/bai21.8.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-2">
+      <p> - Bước 2: Tromg file component.ts nơi nhận param:
+        <br>+ Import ActivatedRoute.
+        <br>+ Khai báo biến activatedRoute trong contructor.
+        <br>+ Sử dụng activatedRoute để lấy ra các param.
+      </p>
+
+      <img src="assets/images/bai21.9.png" class="img-fluid rounded">
+    </div>
+
+    <div class="col-12 mt-4">
+      <h5>QueryParam</h5>
+
+      <p>Đối với cách truyền tham số như ở trên thì ta phải khai báo param trong router. Đối với queryParam thì ta không
+        phải khai báo trong router, các tham số queryParam có hay không có không ảnh hưởng đến URL.</p>
+    </div>
+
+    <div class="col-12 mt-2">
+      <h6>Ví dụ</h6>
+    </div>
+
+    <div class="col-12 mt-2">
+      <app-panigation [totalRecords]="60" [recordsPerPage]="5" [activePage]=(activePage) (onPageChange)="displayActivePage($event)"></app-panigation>
     </div>
   </div>
 </div>

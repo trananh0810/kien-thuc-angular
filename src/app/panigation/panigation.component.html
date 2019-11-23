@@ -1,0 +1,14 @@
+<nav aria-label="page navigation example">
+    <ul class="pagination">
+        <li class="page-item" (click)="changePage(activePage - 1)" [ngClass]="{'disable': activePage == 1}" >
+            <a class="page-link"><i class="fas fa-chevron-left"></i></a>
+        </li>
+        <li class="page-item" [ngClass]="{'active': activePage === item}" *ngFor="let item of pages"
+            (click)="changePage(item)">
+            <a class="page-link" routerLink="/home/bai21" [queryParams]="{page: item}">{{item}}</a>
+        </li>
+        <li class="page-item" (click)="changePage(activePage + 1)" [ngClass]="{'disable': activePage == pageCount}" >
+            <a class="page-link"  ><i class="fas fa-chevron-right"></i></a>
+        </li>
+    </ul>
+</nav>

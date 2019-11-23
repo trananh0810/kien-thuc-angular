@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../../../service/api.service';
+import {log} from 'util';
 
 @Component({
   selector: 'app-bai18-home',
@@ -12,5 +13,10 @@ export class Bai18HomeComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getData().subscribe((respone: any) => this.users = respone);
+    // this.getListUser();
   }
+
+  // async getListUser() {
+  //   this.users = await this.apiService.getData();
+  // }
 }

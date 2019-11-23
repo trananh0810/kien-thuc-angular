@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row my-4">
+        <div class="col-sm-6 col-12 py-4 offset-sm-3 border rounded">
+            <form #formLogin="ngForm" (ngSubmit)="login(formLogin.value)">
+                <div class="form-group">
+                  <label for="txtUser" class="mt-2">Tên đăng nhập</label>
+                  <input type="text" class="form-control" name="username" #txtUser="ngModel" ngModel>
+                  <small id="helpId" class="form-text text-muted">{{messErrUser}}</small>
+
+                  <label for="txtPass" class="mt-2">Mật khẩu</label>
+                  <input type="password" class="form-control" name="password" #txtPass="ngModel" ngModel>
+                  <small id="helpId" class="form-text text-muted">{{messErrPass}}</small>
+
+                  <button type="submit" class="btn btn-primary btn-block mt-4">Đăng nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

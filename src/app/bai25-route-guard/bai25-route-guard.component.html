@@ -1,0 +1,29 @@
+<div class="container-fluid my-4">
+    <div class="col-12">
+        <h3>Route Guard</h3>
+
+        <p>Route guard được sử dụng dùng để xác thực quyền truy cập trang web của người dùng hoặc bắt sự kiện người dùng rời khỏi trang web khi đang nhập thông tin trong 1 form.
+            Có thể hiểu Route Guard tương tực như Interceptor trong Java.
+        </p>
+    </div>
+
+    <div class="col-12 mt-2">
+        <h5>Cách sử dụng:</h5>
+    </div>
+
+    <div class="col-12 mt-2">
+        <p>- Bước 1: Tạo file guard.ts:
+            <br>+ Phải khai báo @Injectable để thực hiện cơ chế DI.
+            <br>+ Implement CanActivate và overite lại phương thức canActivate.
+            <br>+ Trong phương thức canActivate sẽ return ra true hoặc false. Nếu là true thì sẽ cho đi đến path được chỉ đinh guard này. false ngược lại.
+        </p>
+
+        <img class="img-fluid" src="assets/images/bai25.1.png" alt="">
+    </div>
+
+    <div class="col-12 mt-2">
+        <p>- Bước 2: Thêm canActivate vào trong path. Giá trị của canActivate là một mảng các guard. Guard này cũng sẽ có tác dụng với các path child của path đó.</p>
+
+        <img class="img-fluid" src="assets/images/bai25.2.png" alt="">
+    </div>
+</div>

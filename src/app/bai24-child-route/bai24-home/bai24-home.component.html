@@ -1,0 +1,51 @@
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-12">
+            <h3>Children Route</h3>
+
+            <p>Children Route sử dụng để lồng router vào trong một router khác.</p>
+        </div>
+
+        <div class="col-12 mt-2">
+            <h5>Ví dụ</h5>
+    
+            <a routerLink="tab1" class="btn btn-primary">Tab 1</a>
+            <a routerLink="tab2" class="btn btn-success">Tab 2</a>
+        </div>
+
+        <div class="col-12 mt-2">
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class="col-12 mt-2">
+            <h5>Cách sử dụng:</h5>
+        </div>
+
+        <div class="col-12 mt-2">
+            <p>- Bước 1: Trong file router.ts, khai báo child trong path của component cha. Child sẽ chứa path của các component con.</p>
+
+            <img src="assets/images/bai24.1.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2">
+            <p>- Bước 2: Trong component cha:
+                <br>+ Tạo các thẻ a dùng routerLink để làm link cho các component con.
+                <br>+ Đặt cặp thẻ router-outlet.
+            </p>
+
+            <img src="assets/images/bai24.2.png" class="img-fluid rounded">
+        </div>
+
+        <div class="col-12 mt-2">
+            <h5>Nhận tham số từ URL của component cha</h5>
+
+            <p>- Trong file ts của component con:
+                <br>+ Import ActivatedRouter.
+                <br>+ Khai báo 1 biến private của ActivatedRouter trong contructor.
+                <br>+ Sử dụng activatedRouter truy cập đến parent và lấy ra các param theo param name.
+            </p>
+
+            <img src="assets/images/bai24.3.png" class="img-fluid rounded">
+        </div>
+    </div>
+</div>
